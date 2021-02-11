@@ -1,0 +1,6 @@
+{
+  "name": "o-sol-da-coruna",
+  "watch": true,
+  "script": "./node_modules/.bin/ts-node",
+  "args": "src/index.ts"
+}
