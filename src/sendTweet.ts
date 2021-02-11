@@ -31,10 +31,11 @@ export default async function sendTweet() {
 
   const tweet = await composeTweet(new Date())
 
-  // DEBUG -- DEBUG
-  console.log(tweet)
-  return
-  // DEBUG -- DEBUG
+  if (process.env.NODE_ENV === "dev") {
+    // If in development, just print the tweet to console
+    console.log(tweet)
+    return
+  }
 
   let tweetImageMediaId = undefined
   if (tweet.image) {
