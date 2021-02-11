@@ -1,0 +1,15 @@
+export const monthNames = [
+  null,
+  "Xaneiro",
+  "Febreiro",
+  "Marzo",
+  "Abril",
+  "Maio",
+  "Xuño",
+  "Xullo",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Decembro",
+]
