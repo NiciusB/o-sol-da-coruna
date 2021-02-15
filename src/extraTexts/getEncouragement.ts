@@ -19,6 +19,7 @@ const strings = {
       "Todo estará ben",
       "Xa falta pouco",
       "Hoxe sucederán unha chea de cousas boas",
+      "Estou moi orgullos@ de ti",
     ]
   },
 }

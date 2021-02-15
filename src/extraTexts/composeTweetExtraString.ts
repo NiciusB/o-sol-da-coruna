@@ -17,7 +17,7 @@ export default function composeTweetExtraString(date: Date): null | string {
 }
 
 function getRandomExtraEncouragement(date: Date) {
-  if (Math.random() < 0.6) {
+  if (Math.random() < 0.5) {
     return ""
   }
 

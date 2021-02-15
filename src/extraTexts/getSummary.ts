@@ -17,6 +17,34 @@ const strings = {
 
     const sunTimesToday = config.getSunTimes(date)
 
+    {
+      options.push(
+        `O atardecer non será ata as ${config.formatDateTime(
+          sunTimesToday.sunset,
+          {
+            hour: "2-digit",
+            minute: "2-digit",
+          }
+        )} hoxe 🌇`,
+
+        `O sol sairá ás ${config.formatDateTime(sunTimesToday.sunrise, {
+          hour: "2-digit",
+          minute: "2-digit",
+        })} hoxe 🌻`
+      )
+
+      if (
+        getDateTimeForTimezone(config.timezone, sunTimesToday.sunrise).hours < 8
+      ) {
+        options.push(
+          `Hoxe o sol sairá ás ${config.formatDateTime(sunTimesToday.sunrise, {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}, e sinceramente é perfectamente aceptable para min`
+        )
+      }
+    }
+
     const dateTimeForTimezone = getDateTimeForTimezone(config.timezone, date)
 
     {
@@ -80,14 +108,25 @@ const strings = {
           `Despois de hoxe, os días comezan a alargarse`,
           `Despois de hoxe, engadimos polo menos un minuto extra todos os días`,
           `Despois desta noite, os días comezan a alargarse de novo`,
-          `Despois de mañá, os días comezan a alargarse de novo e estou aquí para atravesarte os días escuros e fríos do inverno dicíndoche exactamente a cantidade de luz do día que gañas cada día`,
-          `Despois de hoxe, a posta do sol é polo menos un minuto despois todos os días` // not 100% true
+          `Despois de mañá, os días comezan a alargarse de novo e estou aquí para atravesarte os días escuros e fríos do inverno dicíndoche exactamente a cantidade de luz do día que gañas cada día`
         )
       }
 
       if (secondsAddedToday >= 0 && secondsAddedTomorrow < 0) {
         options.push(
-          `Despois de hoxe, os días comezan a acortarse de novo pero estarei aquí para axudarche`
+          `Despois de hoxe, os días comezan a acortarse de novo, pero estarei aquí para axudarche`
+        )
+      }
+
+      if (secondsAddedToday > 0) {
+        options.push(
+          `Hoxe foi exactamente ${secondsAddedToday} segundos mais longo que onte`
+        )
+      }
+
+      if (secondsAddedToday > 0 && secondsAddedTomorrow > 0) {
+        options.push(
+          `Hoxe chegaron ${secondsAddedToday} preciosos segundos de luz, e mañá haberá mais`
         )
       }
     }
