@@ -9,7 +9,7 @@ const strings = {
   encouragement(date: Date) {
     return [
       "Fica comigo",
-      "Fíxelo!",
+      "Fixéchelo!",
       "Podes facelo",
       "Xa estamos case alí",
       "❤️",

@@ -58,7 +58,11 @@ const strings = {
 
       if (secondsAddedSince1Jan >= 60 * 30) {
         const mins = Math.round(secondsAddedSince1Jan / 60)
-        options.push(`Dende o 1 de xaneiro engadimos ${mins} minutos ao día`)
+        options.push(
+          Math.random() < 0.5
+            ? `Dende o 1 de xaneiro engadimos ${mins} minutos ao día`
+            : `No que levamos de ano, o día creceu ${mins} minutos`
+        )
       }
 
       if (dateTimeForTimezone.month === 1 && dateTimeForTimezone.day === 16) {
